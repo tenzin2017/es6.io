@@ -18,7 +18,7 @@
     }
     .jump span {
       display: inline-block;
-      transition: transform 0.2s;
+      transition: transform 1s;
       cursor:url('http://csscursor.info/source/santahand.png'), default;
     }
     .jump span:hover {
@@ -30,7 +30,14 @@
   <h2 class="jump">SPREADS!</h2>
 
 <script>
-  
+const heading = document.querySelector('.jump');
+heading.innerHTML = sparanWrap(heading.textContent);
+console.log(heading);
+
+function sparanWrap(word){
+  return [...word].map(letter => `<span>${letter}</span>`).join('');
+}
+
 </script>
 </body>
 </html>
